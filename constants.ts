@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { IconBrain, IconHeart, IconSparkles, IconHeartHandshake, IconShieldCheck, IconBrush, IconFeather, IconAtom, IconUsers, IconHandsPraying, IconCrystalBall, IconYinYang, IconSpiral, IconTarget, IconRoad } from './components/Icons';
 
@@ -23,31 +22,55 @@ export const concreteGoals = [
 
 export const philosophyLayers = [
     {
-        title: "İçimizdeki 7 Atom Altı Evren",
-        description: "Bedeninizdeki çakralarla bağlantılı kuantum enerji merkezleri. Duygusal ve ruhsal işlevlerinizi düzenler.",
-        icon: React.createElement(IconAtom)
+        title: "İçimizdeki 7 Evren",
+        description: "Bedeninizdeki çakra-benzeri kuantum enerji merkezleri. Duygusal ve ruhsal işlevlerinizi düzenler.",
+        icon: React.createElement(IconAtom),
+        details: [
+            { title: 'Temel Evren (Kök)', theme: 'Güven, bedenlenme, hayatta kalma.', imbalance: 'Sürekli kaygı, aşırı kontrol/dağınıklık.', practice: '4-7-8 nefes + ayakta topraklama (ayak tabanını hissederek).', affirmation: 'Yerdeyim ve güvendeyim.', colorSymbol: 'Kırmızı / kare' },
+            { title: 'Akış Evreni (Sakral)', theme: 'Duygusal akış, haz–yaratıcılık, yakınlık.', imbalance: 'Bastırılmış duygu, suçluluk/taşkınlık.', practice: 'Pelvis odaklı nefes, nazik esneme; “duygumu adlandırıyorum.”', affirmation: 'Duygularım akıyor ve güvenle ifade buluyor.', colorSymbol: 'Turuncu / dalga' },
+            { title: 'Kıvılcım Evreni (Solar)', theme: 'İrade, sınır koyma, öz-etkinlik.', imbalance: 'Kararsızlık/katılık, öfke birikimi.', practice: '5 dak. dik duruş + kontrollü nefes; “hayır” deme provası.', affirmation: 'İrade ve nezaketle eyleme geçiyorum.', colorSymbol: 'Sarı / güneş' },
+            { title: 'Şefkat Evreni (Kalp)', theme: 'Öz-şefkat, bağ, affedicilik.', imbalance: 'Kırgınlık, aşırı özveri/duygusal kapanma.', practice: 'Sevgi-nezaket meditasyonu (Loving-kindness).', affirmation: 'Kendime ve başkalarına nazik davranıyorum.', colorSymbol: 'Yeşil / lotus' },
+            { title: 'Söz Evreni (Boğaz)', theme: 'İfade, dürüst iletişim, dinleme.', imbalance: 'Yutkunma/ketumluk, aşırı konuşma.', practice: '3 dak. bilinçli dinleme + netlik cümlesi (“İhtiyacım şudur…”).', affirmation: 'Gerçeğimi net ve nazikçe ifade ediyorum.', colorSymbol: 'Mavi / çember' },
+            { title: 'Görü Evreni (3. Göz)', theme: 'İçgörü, sezgi, perspektif.', imbalance: 'Aşırı ruminasyon, kopuk hayalcilik.', practice: '2 dak. nokta odak + 3 dak. geniş farkındalık.', affirmation: 'Net görüyorum; olanı olduğu gibi kabul ediyorum.', colorSymbol: 'Lacivert / göz' },
+            { title: 'Işık Evreni (Taç)', theme: 'Anlam, transandans, sessizlik.', imbalance: 'Anlam boşluğu, spiritüel bypass.', practice: 'Sessiz oturuş (7–10 dk), minnettarlık notu.', affirmation: 'Varlığımda bütünlük ve ışık var.', colorSymbol: 'Mor/beyaz / ışıma' }
+        ]
     },
     {
-        title: "Yakın Çevremizdeki 5 Atom Altı Evren",
+        title: "Yakın Çevredeki 5 Evren",
         description: "Auranızın yakın katmanları. Günlük etkileşimlerinizi ve enerjisel sınırlarınızı belirler.",
-        icon: React.createElement(IconUsers)
+        icon: React.createElement(IconUsers),
+        details: [
+            { title: 'Sınır Evreni', tip: '“Rica–Sınır–Alternatif” cümle mimarisi.' },
+            { title: 'Rezonans Evreni', tip: '“Bu duygu bana mı, karşımdakine mi ait?” kontrolü.' },
+            { title: 'Yansıma Evreni', tip: 'Tetikleyici günlüğü (olay–duygu–ihtiyaç).' },
+            { title: 'Uyum Evreni', tip: 'Senkronize nefes; konuşma/ara oranı 3:1.' },
+            { title: 'Topraklama Evreni', tip: '90 saniyelik “somut üçleme” (gör–işit–hisset).' },
+        ]
     },
     {
-        title: "Uzak Aura Alanımızdaki 6 Atom Altı Evren",
+        title: "Uzak Aura Alanındaki 6 Evren",
         description: "Evrensel bilinçle olan kuantum bağlantınız. Yüksek farkındalık seviyelerine kapı açar.",
-        icon: React.createElement(IconSparkles)
+        icon: React.createElement(IconSparkles),
+        details: [
+            { title: 'Birlik Evreni', motto: '“Ayrı ve yine de bağlı.”' },
+            { title: 'Anlam Evreni', motto: '“Değerlerim eylemimi belirler.”' },
+            { title: 'Hizmet Evreni', motto: '“Küçük bir iyi eylem bugün.”' },
+            { title: 'Şükran Evreni', motto: '“Bugün 3 teşekkür.”' },
+            { title: 'Neşe Evreni', motto: '“Küçük sevinçleri büyüt.”' },
+            { title: 'Sessizlik Evreni', motto: '“Sessizlikte netlik belirir.”' },
+        ]
     }
 ];
 
 export const programWeeks = [
-    { week: 1, title: "Temel Atma", description: "Niyetin gücü, bilinçli nefes ve beden farkındalığı ile yolculuğa başlangıç." },
-    { week: 2, title: "Duyguları Anlama", description: "Tetikleyicileri keşfetme ve duygu-tepki döngüsünü anlama." },
-    { week: 3, title: "İçsel Evrenler", description: "Kalp, ifade ve güç merkezleriyle bağlantı kurma; öz-şefkat." },
-    { week: 4, title: "Kişisel Alan", description: "Sağlıklı sınırlar çizme ve enerjinizi koruma pratikleri." },
-    { week: 5, title: "Anlam ve Bağlantı", description: "Minnettarlık, yaşam amacı ve evrenle rezonans temaları." },
-    { week: 6, title: "Bütünleşme", description: "Öğrenilenleri günlük hayata entegre etme ve kalıcı alışkanlıklar oluşturma." },
-    { week: 7, title: "Derinleşme", description: "Uzun ve derinlemesine rehberli meditasyonlar ile içsel sessizliğe yolculuk." },
-    { week: 8, title: "Yeni Bir Başlangıç", description: "Kişisel yol haritanızı oluşturma ve program kazanımlarını kutlama." }
+    { week: 1, title: "Temel Atma (Kök)", description: "Güven ve bedenlenme temalarıyla yolculuğa başlangıç. Temel Evren ile bağlantı kuruyoruz." },
+    { week: 2, title: "Duygusal Akış (Sakral)", description: "Duyguları tanıma, ifade etme ve Akış Evreni'nin yaratıcı enerjisini keşfetme." },
+    { week: 3, title: "İrade ve Güç (Solar)", description: "Öz-etkinlik ve sağlıklı sınırlar. Kıvılcım ve Söz Evrenleri ile çalışma." },
+    { week: 4, title: "Kalbin Bilgeliği (Kalp)", description: "Öz-şefkat, bağ kurma ve affedicilik. Şefkat Evreni'ni merkeze alıyoruz." },
+    { week: 5, title: "Sezgi ve Görü (3. Göz)", description: "İçgörü, perspektif ve Görü Evreni'ni aktive etme pratikleri." },
+    { week: 6, title: "Bütünleşme ve Sınırlar", description: "Yakın Çevre Evrenleri'ni (Sınır, Rezonans) anlayıp günlük hayata entegre etme." },
+    { week: 7, title: "Anlam ve Bağlantı (Taç)", description: "Uzak Aura Evrenleri (Birlik, Anlam) ile bağlantı kurarak daha geniş bir perspektif kazanma." },
+    { week: 8, title: "Yeni Bir Başlangıç", description: "Tüm evrenleri dengeleyerek kişisel yol haritanızı oluşturma ve kazanımları kutlama." }
 ];
 
 export const microPractices = [
@@ -55,6 +78,12 @@ export const microPractices = [
     "2 dk Minnettarlık",
     "5 dk Odaklanma",
     "2 dk Beden Tarama"
+];
+
+export const dailyPracticeMap = [
+    { time: "Sabah (3–5 dk)", practice: "Temel/Topraklama + gün niyeti." },
+    { time: "Gün ortası (2–3 dk)", practice: "Rezonans/Sınır kontrolü." },
+    { time: "Akşam (7–10 dk)", practice: "Şefkat veya Sessizlik Evreni oturuşu + şükran 3’lemesi." }
 ];
 
 export const practices = [

@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Section from './components/Section';
@@ -7,12 +6,14 @@ import ProgramCard from './components/ProgramCard';
 import GuideProfile from './components/GuideProfile';
 import FaqItem from './components/FaqItem';
 import Footer from './components/Footer';
-import { sections, programWeeks, guides, faqs, microPractices, bibliography, philosophyLayers, practices, testimonials, concreteGoals, participationSteps } from './constants';
+import PhilosophyDetail from './components/PhilosophyDetail';
+import { sections, programWeeks, guides, faqs, microPractices, bibliography, philosophyLayers, practices, testimonials, concreteGoals, participationSteps, dailyPracticeMap } from './constants';
 import { IconBookOpen, IconTarget, IconShieldCheck, IconRoad, IconClipboardList, IconUsers, IconHelpCircle, IconCode, IconHeartHandshake, IconQuote } from './components/Icons';
 
 const App: React.FC = () => {
   const leadGuide = guides.find(g => g.isLead);
   const lotusGuides = guides.filter(g => !g.isLead);
+  const [selectedLayerIndex, setSelectedLayerIndex] = useState<number | null>(null);
 
   return (
     <div className="bg-white text-slate-700">
@@ -41,14 +42,28 @@ const App: React.FC = () => {
         <Section id="felsefemiz" title={sections[1].title} icon={<IconCode />}>
             <p className="text-center text-xl mb-10 text-slate-600">MAAD, iç dünyamızı anlamak için güçlü metaforlar kullanır. Varlığımızı, birbiriyle etkileşim halinde olan üç temel enerji katmanı olarak görürüz:</p>
             <div className="grid md:grid-cols-3 gap-8">
-                {philosophyLayers.map((layer, index) => (
-                    <div key={index} className="bg-slate-50 p-6 rounded-xl border border-slate-200 text-center hover:shadow-lg hover:-translate-y-1 transition-transform duration-300">
+                 {philosophyLayers.map((layer, index) => (
+                    <div 
+                        key={index} 
+                        onClick={() => setSelectedLayerIndex(selectedLayerIndex === index ? null : index)}
+                        className={`bg-slate-50 p-6 rounded-xl border-2 text-center cursor-pointer transition-all duration-300 ${
+                            selectedLayerIndex === index 
+                            ? 'border-teal-500 shadow-2xl scale-105' 
+                            : 'border-slate-200 hover:shadow-lg hover:-translate-y-1'
+                        }`}
+                    >
                         <div className="flex justify-center mb-4 text-teal-600">{layer.icon}</div>
                         <h3 className="text-xl font-bold text-slate-800 mb-2">{layer.title}</h3>
                         <p className="text-slate-600">{layer.description}</p>
                     </div>
                 ))}
             </div>
+            {selectedLayerIndex !== null && (
+                <PhilosophyDetail 
+                    details={philosophyLayers[selectedLayerIndex].details} 
+                    layerTitle={philosophyLayers[selectedLayerIndex].title}
+                />
+            )}
         </Section>
 
         {/* Program Section */}
@@ -84,6 +99,17 @@ const App: React.FC = () => {
                         </div>
                     </div>
                 ))}
+            </div>
+            <div className="mt-16 bg-slate-50 p-8 rounded-xl border border-slate-200">
+                <h3 className="text-2xl font-bold text-center text-slate-800 mb-6">Önerilen Günün Ritmi</h3>
+                <div className="grid sm:grid-cols-3 gap-8 text-center">
+                    {dailyPracticeMap.map((item, index) => (
+                        <div key={index}>
+                            <h4 className="font-bold text-teal-700 text-lg">{item.time}</h4>
+                            <p className="text-slate-600 mt-2">{item.practice}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </Section>
 
