@@ -108,17 +108,48 @@ const App: React.FC = () => {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {lotusGuides.map((guide, index) => (
-                    <GuideProfile 
-                        key={index} 
-                        name={guide.name} 
-                        title={guide.title} 
-                        description={guide.description} 
-                        isLead={guide.isLead} 
-                        icon={guide.icon}
-                    />
-                ))}
+            <div className="space-y-8">
+                {/* Row 1: 2 Guides */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                    {lotusGuides.slice(0, 2).map((guide, index) => (
+                        <GuideProfile
+                            key={index}
+                            name={guide.name}
+                            title={guide.title}
+                            description={guide.description}
+                            isLead={guide.isLead}
+                            icon={guide.icon}
+                        />
+                    ))}
+                </div>
+
+                {/* Row 2: 3 Guides */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {lotusGuides.slice(2, 5).map((guide, index) => (
+                        <GuideProfile
+                            key={index + 2}
+                            name={guide.name}
+                            title={guide.title}
+                            description={guide.description}
+                            isLead={guide.isLead}
+                            icon={guide.icon}
+                        />
+                    ))}
+                </div>
+
+                {/* Row 3: 2 Guides */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                    {lotusGuides.slice(5, 7).map((guide, index) => (
+                        <GuideProfile
+                            key={index + 5}
+                            name={guide.name}
+                            title={guide.title}
+                            description={guide.description}
+                            isLead={guide.isLead}
+                            icon={guide.icon}
+                        />
+                    ))}
+                </div>
             </div>
         </Section>
 
