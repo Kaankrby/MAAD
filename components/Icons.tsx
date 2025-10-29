@@ -144,3 +144,5 @@ export const IconYinYang = createIconWithChildren(<>
 export const IconSpiral = createIcon("M12 3a9 9 0 0 1 0 18A9 9 0 0 1 3.75 6");
 
 export const IconQuote = createIcon("M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z");
+export const IconChevronDown = createIcon("M6 9l6 6 6-6");
+export const IconChevronRight = createIcon("M9 18l6-6-6-6");
