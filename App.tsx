@@ -69,7 +69,7 @@ const App: React.FC = () => {
                     ))}
                 </div>
             </div>
-        </section>
+        </Section>
         
         {/* Practices Section */}
         <Section id="uygulamalar" title={sections[3].title} icon={<IconClipboardList />}>
@@ -222,7 +222,7 @@ const App: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </Section>
       </main>
       <Footer />
     </div>
