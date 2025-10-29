@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { IconLotus } from './Icons';
 
@@ -40,6 +39,7 @@ const Header: React.FC = () => {
     };
 
     return (
+        // FIX: Replaced single quotes with backticks for template literal className.
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 shadow-md backdrop-blur-sm' : 'bg-transparent'}`}>
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
