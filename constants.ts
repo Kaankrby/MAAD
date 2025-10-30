@@ -27,7 +27,7 @@ export const philosophyLayers = [
         icon: React.createElement(IconAtom),
         details: [
             { title: 'Temel Evren (Kök)', theme: 'Güven, bedenlenme, hayatta kalma.', imbalance: 'Sürekli kaygı, aşırı kontrol/dağınıklık.', practice: '4-7-8 nefes + ayakta topraklama (ayak tabanını hissederek).', affirmation: 'Yerdeyim ve güvendeyim.', colorSymbol: 'Kırmızı / kare' },
-            { title: 'Akış Evreni (Sakral)', theme: 'Duygusal akış, haz–yaratıcılık, yakınlık.', imbalance: 'Bastırılmış duygu, suçluluk/taşkınlık.', practice: 'Pelvis odaklı nefes, nazik esneme; “duygumu adlandırıyorum.”', affirmation: 'Duygularım akıyor ve güvenle ifade buluyor.', colorSymbol: 'Turuncu / dalga' },
+            { title: 'Akış Evreni (Sakral)', theme: 'Duygusal akış, haz–yaratıcılık, yakınlık.', imbalance: 'Bastırılmış duygu, suçlululuk/taşkınlık.', practice: 'Pelvis odaklı nefes, nazik esneme; “duygumu adlandırıyorum.”', affirmation: 'Duygularım akıyor ve güvenle ifade buluyor.', colorSymbol: 'Turuncu / dalga' },
             { title: 'Kıvılcım Evreni (Solar)', theme: 'İrade, sınır koyma, öz-etkinlik.', imbalance: 'Kararsızlık/katılık, öfke birikimi.', practice: '5 dak. dik duruş + kontrollü nefes; “hayır” deme provası.', affirmation: 'İrade ve nezaketle eyleme geçiyorum.', colorSymbol: 'Sarı / güneş' },
             { title: 'Şefkat Evreni (Kalp)', theme: 'Öz-şefkat, bağ, affedicilik.', imbalance: 'Kırgınlık, aşırı özveri/duygusal kapanma.', practice: 'Sevgi-nezaket meditasyonu (Loving-kindness).', affirmation: 'Kendime ve başkalarına nazik davranıyorum.', colorSymbol: 'Yeşil / lotus' },
             { title: 'Söz Evreni (Boğaz)', theme: 'İfade, dürüst iletişim, dinleme.', imbalance: 'Yutkunma/ketumluk, aşırı konuşma.', practice: '3 dak. bilinçli dinleme + netlik cümlesi (“İhtiyacım şudur…”).', affirmation: 'Gerçeğimi net ve nazikçe ifade ediyorum.', colorSymbol: 'Mavi / çember' },
@@ -88,36 +88,147 @@ export const dailyPracticeMap = [
 
 export const practices = [
     {
-        title: "Kuantum Meditasyon",
-        description: "Bilinçli niyetlerle enerji alanına etki ederek içsel merkezleri dengeleme.",
+        id: "quantumMeditation",
+        title: "Kuantum-Niyet Meditasyonu",
+        description: "“Gözlem → Niyet → Nezaket” üçlüsüyle duygusal dalgalanmayı düzenlemek.",
         icon: React.createElement(IconBrain)
     },
     {
-        title: "Reiki ve Enerji Şifası",
-        description: "Evrensel yaşam enerjisiyle blokajları açma ve enerji akışını iyileştirme.",
+        id: "reiki",
+        title: "Reiki / Enerji Şifası",
+        description: "Par sempatik tonusu yükseltmek, bedende güvenlik ve rahatlama hissi yaratmak.",
         icon: React.createElement(IconHandsPraying)
     },
     {
-        title: "Çakra ve Meridyen Dengeleme",
-        description: "Bedenin enerji noktalarını ve kanallarını hizalayarak bütünsel denge sağlama.",
+        id: "chakraBalancing",
+        title: "Çakra / Meridyen Dengeleme",
+        description: "Bedensel duyum farkındalığıyla “iç 7 evren”in metaforik hizalanması.",
         icon: React.createElement(IconYinYang)
     },
     {
-        title: "Kristal ve Taş Terapisi",
-        description: "Kristallerin frekanslarını kullanarak enerjisel iyileşmeyi ve dengeyi destekleme.",
-        icon: React.createElement(IconCrystalBall)
-    },
-    {
-        title: "Nefes Çalışmaları ve Mantralar",
-        description: "Nefes ve ses titreşimleriyle zihinsel ve duygusal dengeyi derinleştirme.",
+        id: "breathMantra",
+        title: "Nefes & Mantra",
+        description: "Otonom sinir sisteminde denge kurmak; dikkat ve duygu düzenleme.",
         icon: React.createElement(IconFeather)
     },
     {
-        title: "Ritüeller ve Enerji Temizliği",
-        description: "Belirli ritüeller ve niyetlerle kişisel enerji alanını arındırma ve yeniden düzenleme.",
+        id: "ritualCleansing",
+        title: "Ritüel & Temizlik",
+        description: "Zihinsel kapanış/başlangıç işareti vererek “iç ritim”e dönmek.",
         icon: React.createElement(IconSpiral)
     }
 ];
+
+export const practiceDetails = {
+    quantumMeditation: {
+        title: "Kuantum-Niyet Meditasyonu",
+        purpose: "“Gözlem → Niyet → Nezaket” üçlüsüyle duygusal dalgalanmayı düzenlemek, öz-farkındalığı artırmak.",
+        duration: "10–12 dk (giriş seviyesinde 6–8 dk). Haftada 4–6 gün.",
+        preparation: ["Sessiz alan, rahat oturuş; zamanlayıcı.", "Not defteri/telefon notu (1 dakikalık yansıma için)."],
+        steps: [
+            { title: "Zeminleme (1 dk)", description: "Omuzları gevşet, 3 doğal nefes." },
+            { title: "Gözlem (3 dk)", description: "Duygu/beden duyumlarını etiketlemeden fark et (“göğüste basınç”, “karında sıcaklık”)." },
+            { title: "Niyet (2 dk)", description: "Tek cümle: “Bu oturumun niyeti sakinlik ve açıklık.”" },
+            { title: "Nezaket (3–5 dk)", description: "İçsel nezaket ifadesi: “Zorlanıyorsam da bu anı yumuşaklıkla tutuyorum.”" },
+            { title: "Kapanış (1 dk)", description: "1 cümle günlük: “Şu anda bana iyi gelen şey…”" }
+        ],
+        variations: [
+            { title: "Mikro sürüm (3 dk)", description: "1 nefes + 1 niyet + 1 nezaket cümlesi." },
+            { title: "Duygu odaklı", description: "Tek bir duyguyu (kaygı/öfke) seç, 3 dk yalnızca onu gözlemle." },
+            { title: "Yürüyerek meditasyon", description: "Her 5 adımda “gözlem-niyet” döngüsü." }
+        ],
+        safety: ["Duygu yoğunluğunda göz açıp odadaki 3 nesneyi say; ritmi kısalt.", "Travma tetiklenmesinde dur, bedensel topraklama yap (ayak basıncı, avuç içi sürtme)."],
+        tracking: ["0–10 arası sakinlik/gerilim skoru (önce/sonra).", "Haftalık not: “Hangi niyetler işledi?”"],
+        script: "“Nefes alırken ‘farkındayım’, verirken ‘yumuşuyorum’ de. Gelen her duyumu nazikçe karşıla. ‘Bu oturumda sakinlik ve açıklık niyetindeyim.’ Zor olursa ‘nazikçe’ kelimesini içinden tekrarla.”"
+    },
+    reiki: {
+        title: "Reiki / Enerji Şifası",
+        purpose: "Par sempatik tonusu yükseltmek, bedende güvenlik hissi ve rahatlama.",
+        duration: "15–30 dk. Haftada 1–2 seans; öz-uygulama 5–10 dk.",
+        preparation: ["Eller ılık/sıcak; el hijyeni.", "İzin/onam (kişiler arası çalışmada).", "Yüz yukarı uzanır pozisyon, ince battaniye."],
+        steps: [
+            { title: "Niyet (30 sn)", description: "“Bedenime nazikçe alan açıyorum.”" },
+            { title: "Baş/Alın (2 dk)", description: "Avuçlar temassız veya hafifçe değerek." },
+            { title: "Kalp (3 dk)", description: "Ellerden biri göğüste, diğeri üst karında; nefesi yavaşlat." },
+            { title: "Karın (3 dk)", description: "Avuç içleri göbek çevresinde; 4-7-8 nefes 2 tur." },
+            { title: "Kapanış (1–2 dk)", description: "Avuçları kalpte birleştir, minnettarlık cümlesi." }
+        ],
+        variations: [
+            { title: "Sandalye sürümü (5 dk)." },
+            { title: "Uzak niyet (metaforik)", description: "Katılımcı kendine yönelik nezaket niyetini tekrarlarken rehber eşlik eder." }
+        ],
+        safety: ["Ağrı/rahatsızlıkta konum değiştir.", "Hamilelik, ameliyat bölgesi, açık yara vb. alanlara dokunma (temassız çalış).", "Alerji/ısı hassasiyetinde ısıtıcı losyon/yağ kullanma."],
+        tracking: ["Seans öncesi/sonrası beden gerilim haritası (baş/omuz/karın/bacak: 0–10).", "Uyku kalitesi notu (kısa yorum)."],
+        script: "“Ellerini kalp ve karın üzerinde dinlendir. Nefes alırken ‘yumuşuyorum’, verirken ‘bırakıyorum’ de. Avuçlarının sıcaklığına dikkat ver. Bedeninin kendi ritmine güven.”"
+    },
+    chakraBalancing: {
+        title: "Çakra / Meridyen Dengeleme",
+        purpose: "Bedensel duyum farkındalığıyla “iç 7 evren”in (çakra-benzeri merkezler) metaforik hizalanması.",
+        duration: "12–20 dk; haftada 3–5 gün.",
+        preparation: ["Rahat zemin; tercihe bağlı taş/kristal (ametist/rose quartz vb.).", "Boyun/sırtı destekleyecek yastık."],
+        steps: [
+            { title: "Temel Evren – Kök (2 dk)", description: "Pelvis ve ayak tabanına odaklan; 6 yavaş nefes." },
+            { title: "Akış – Alt karın (2 dk)", description: "Pelvis çevresinde ılımlı salınım; “Akıyorum.”" },
+            { title: "Kıvılcım – Üst karın (2 dk)", description: "Göbek üstü ısıyı fark et; 4-4 nefes." },
+            { title: "Şefkat – Kalp (3 dk)", description: "Loving-kindness ifadesi (kendine + bir kişiye)." },
+            { title: "Söz – Boğaz (2 dk)", description: "Sessizce “ihtiyacım …” cümlesi; yutkunma rahatlığı." },
+            { title: "Görü – Alın (2 dk)", description: "30 sn nokta odak + 90 sn geniş görüş." },
+            { title: "Işık – Taç (2 dk)", description: "Sessizlik; 3 teşekkür." }
+        ],
+        variations: [
+            { title: "Meridyen taraması", description: "Omuzdan bileğe, kalçadan ayağa nazik sürüş/okşama (kıyafet üzerinden)." },
+            { title: "Taş eşlikleri", description: "Kalpte rose quartz, alında ametist (isteğe bağlı, placebo-dostu çerçeve)." }
+        ],
+        safety: ["Boyun/omurga hassasiyetinde yastıkla destek.", "Vertigo/kan basıncı dengesizliğinde ani baş hareketlerinden kaçın."],
+        tracking: ["“Hangi merkezde en fazla hareket/ısı?” kısa not.", "Önce/sonra rahatlık 0–10."],
+        script: "“Her merkezde iki dakika kal. Oradaki duyumu isimlendirmeden tanık ol. Kalpte ‘Ben ve ötekine nezaket’ de; taçta üç teşekkürle bitir.”"
+    },
+    breathMantra: {
+        title: "Nefes & Mantra",
+        purpose: "Otonom sinir sisteminde denge; dikkat ve duygu düzenleme.",
+        duration: "5–12 dk; günde 1–2 kez.",
+        preparation: ["Rahat oturuş, çene gevşek."],
+        protocols: [
+            {
+                title: "Protokol A – 4-7-8 (5 dk)",
+                steps: ["4 sn al → 7 sn tut → 8 sn ver × 4–6 tur."],
+                note: "Baş dönmesi olursa oturarak, tur sayısını azalt."
+            },
+            {
+                title: "Protokol B – Kutu Nefes (Box Breathing, 6 dk)",
+                steps: ["4 sn al → 4 sn tut → 4 sn ver → 4 sn tut × 6 tur."],
+                note: "Dikkat dağılırsa kare imgele (4 eş kenar)."
+            },
+            {
+                title: "Protokol C – Öz-Şefkat Mantrası (4–6 dk)",
+                steps: ["2 dk doğal nefes.", "2–4 dk şu üçlüyi sırayla fısıltısız tekrarla: 1. “Bu an zor.” 2. “Zorluk insan deneyiminin parçası.” 3. “Kendime nazik davranmayı seçiyorum.”"]
+            }
+        ],
+        safety: ["Astım/KOAH/hamilelik/kalp sorunlarında doktor onayı önerilir.", "Panik atağa yatkınlıkta tutma sürelerini kısalt."],
+        tracking: ["Önce/sonra kalp atımı (akıllı saat varsa).", "0–10 gerilim ve uykuya hazır olma skoru (akşam)."],
+        script: "4-7-8 için: “Burundan 4 sayıda al, 7’de nazikçe tut, 8’de ağızdan yavaşça bırak. Verişi uzat, bedene yer aç.”"
+    },
+    ritualCleansing: {
+        title: "Ritüel & Temizlik",
+        purpose: "Zihinsel kapanış/başlangıç işareti, çevresel uyaranları sadeleştirerek “iç ritim”e dönmek.",
+        duration: "3–10 dk; seans başı/sonu veya gün sonu.",
+        preparation: ["Alerjen içermeyen tütsü/bitkisel demet yerine duman-siz seçenek: difüzör, çan/koschi, tuzlu su kabı.", "Oda havalandırma."],
+        steps: [
+            { title: "Açılış (30 sn)", description: "Niyet cümlesi: “Bugünü nezaketle kapatıyorum.”" },
+            { title: "Ses (1 dk)", description: "Tek çan vuruşu; sesi sonuna dek dinle." },
+            { title: "Duman-siz arınma (2 dk)", description: "Avuç içlerini birbirine sürt, yüzüne ısı getir; ardından tuzlu suya bakıp 3 nefes ver." },
+            { title: "Mühür (1 dk)", description: "Elleri kalpte birleştir; “teşekkür ederim” ×3." },
+            { title: "Defter (30 sn)", description: "Tek cümle yansıma." }
+        ],
+        variations: [
+            { title: "Eşik ritüeli", description: "Kapıdan içeri girerken 1 nefes + niyet; çıkarken 1 teşekkür." },
+            { title: "Mekân düzenleme", description: "2 dk “gör-işit-hisset” taraması; 1 nesneyi sadeleştir." }
+        ],
+        safety: ["Alerji/astım varsa tütsü/duman yok. Açık alev kullanma.", "Dini/kültürel hassasiyete saygı (sembolleri sade ve nötr tut)."],
+        tracking: ["Ritüel sonrası zihinsel dağınıklık 0–10.", "Haftada 3 kez yapanlarda uykuya dalma süresi notu."],
+        script: "“Bir ses, bir nefes, bir teşekkür. Bugünü burada bırakıyorum; yarına yer açıyorum.”"
+    }
+};
 
 export const guides = [
     { 

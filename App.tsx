@@ -7,13 +7,16 @@ import GuideProfile from './components/GuideProfile';
 import FaqItem from './components/FaqItem';
 import Footer from './components/Footer';
 import PhilosophyDetail from './components/PhilosophyDetail';
-import { sections, programWeeks, guides, faqs, microPractices, bibliography, philosophyLayers, practices, testimonials, concreteGoals, participationSteps, dailyPracticeMap } from './constants';
+import PracticeDetailModal from './components/PracticeDetailModal';
+import { sections, programWeeks, guides, faqs, microPractices, bibliography, philosophyLayers, practices, testimonials, concreteGoals, participationSteps, dailyPracticeMap, practiceDetails } from './constants';
 import { IconBookOpen, IconTarget, IconShieldCheck, IconRoad, IconClipboardList, IconUsers, IconHelpCircle, IconCode, IconHeartHandshake, IconQuote } from './components/Icons';
 
 const App: React.FC = () => {
   const leadGuide = guides.find(g => g.isLead);
   const lotusGuides = guides.filter(g => !g.isLead);
   const [selectedLayerIndex, setSelectedLayerIndex] = useState<number | null>(null);
+  const [selectedPractice, setSelectedPractice] = useState<typeof practiceDetails[keyof typeof practiceDetails] | null>(null);
+
 
   return (
     <div className="bg-white text-slate-700">
@@ -88,10 +91,14 @@ const App: React.FC = () => {
         
         {/* Practices Section */}
         <Section id="uygulamalar" title={sections[3].title} icon={<IconClipboardList />}>
-            <p className="text-center text-xl mb-10 text-slate-600">Programımızda, kadim bilgelik ve modern teknikleri bir araya getiren çeşitli uygulamalar kullanıyoruz:</p>
+            <p className="text-center text-xl mb-10 text-slate-600">Programımızda, kadim bilgelik ve modern teknikleri bir araya getiren çeşitli uygulamalar kullanıyoruz. Detaylı protokolleri görmek için tıklayın:</p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {practices.map((practice, index) => (
-                    <div key={index} className="bg-white p-6 rounded-xl shadow-md border border-slate-200 flex items-start space-x-4 hover:shadow-lg transition-shadow duration-300">
+                    <div 
+                        key={index} 
+                        className="bg-white p-6 rounded-xl shadow-md border border-slate-200 flex items-start space-x-4 hover:shadow-xl hover:border-teal-400 transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+                        onClick={() => setSelectedPractice(practiceDetails[practice.id])}
+                    >
                         <div className="flex-shrink-0 text-teal-600 mt-1">{practice.icon}</div>
                         <div>
                             <h3 className="text-lg font-bold text-slate-800">{practice.title}</h3>
@@ -282,6 +289,12 @@ const App: React.FC = () => {
         </Section>
       </main>
       <Footer />
+      {selectedPractice && (
+        <PracticeDetailModal 
+          practice={selectedPractice} 
+          onClose={() => setSelectedPractice(null)} 
+        />
+      )}
     </div>
   );
 };
